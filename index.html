@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  img {
+  width: 100%;
+  height: auto;
+  }
+</style>
+<title>Gun N’ Penguin</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2018</h1>
+<h1 align="middle">Final Project: GUN N’ PENGUIN</h1>
+<h2 align="middle">Stanley Liu, Harry Li, Eric Tsai</h2>
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/logo.png" align="middle" width="500px" style="width:500px;height:auto;"/>
+        </td>
+
+
+      </tr>
+    </table>
+  </div>
+
+
+<h2 align="middle">Our Project</h2>
+<p>
+We are making a zombie shooter game in unity with a focus on different concepts we’ve learned in 184. As according to our schedule, we’ve built most of the core game. We will spend the rest of our time working on polishing the rest of the gameplay and graphics elements.
+</p>
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/p1.png" align="middle" width="500px"/>
+<figcaption align="middle">(penguin...) Braaaiiinssssss….</figcaption>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+<h2 align =”middle”>Shooting and Gun Shots Simulation</h2>
+<p>
+We implemented shooting calculation using raycast. From CS184, we learned to cast a ray and test the intersection. We used raycast for the gun. When user presses left click, we shoot a ray toward the position of gun pointing(camera position) with range of 100. If it hits something, ray cast would return the object it hits. We used this technique as our base for the shooting method. Also, I added point light to all the particles in particle system to simulate gun’s muzzle. Whenever user shoots, it emits a point light on the muzzle to simulate muzzle flash with particle systems like bullets shells.
+</p>
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/p4.png" align="middle" width="500px"/>
+<figcaption align="middle">We use Unity’s particle simulator to animate our muzzle flash.</figcaption>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/p5.png" align="middle" width="500px"/>
+<figcaption align="middle">We also use Unity’s particle simulator to animate our bullet shells.</figcaption>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+<h2 align =”middle”>Explosion Simulation</h2>
+<p>
+We used fractals to generate our explosion effects. So far we’ve completed our main script for creating a fractal using recursion and added it into the game. The generated fractal currently uses a sphere as a base mesh and forms the general shape, color, and lighting effects of an explosion. Next steps include finding a more suitable and realistic base mesh shape as well as adding smoke effects with the help of the particle system.
+</p>
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/p3.png" align="middle" width="500px"/>
+<figcaption align="middle">The explosion animation is demonstrated here.</figcaption>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<h2 align =”middle”>Character Controller</h2>
+<p>
+I wrote my own character controller on the penguin. I calculate different velocity in 3D space based on player’s button like “W A S D”. I also bind left click on mouse to shoot action.
+</p>
+
+<h2 align =”middle”>3D Sound Effect</h2>
+<p>
+I made an audio listener and put it on main character penguin. For each zombie, I made an audio source with range of 10 and the curve is linear rolloff to create variation of volume. When our main character is close to the zombie, the volume of zombie sound increases. For explosion sound effect, I used the linear combination of camera position and exploded object using formula: 0.9f*Camera.main.transform.position + 0.1f*transform.position. At this position I created an explosion sound effect instance that lasts even as the zombie object gets destroyed.
+</p>
+
+<h2 align =”middle”>Enemy AI</h2>
+We use Unity3d’s NavMeshAgent for our zombie AI. We set a lookRadius for each zombie so that it chases the player when entering its aggro zone. The NavMeshAgent then proceeds to chase the player while avoiding obstacles within by a certain distance.
+
+  <div align="middle">
+    <table style="width=100%">
+      <tr>
+        <td>
+          <img src="./images/p2.png" align="middle" width="500px"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<h1 align =”middle”>Additional Deliverables:</h1>
+<h2 align =”middle”>Presentation Slides</h2>
+<a href="https://docs.google.com/presentation/d/1FjOChi_jh4MxnLEksquc6pNMf3NCpZQB0Axk3hQXsuw/edit?usp=sharing">Link to our Google Presentation Slides.</a>
+<h2 align =”middle”>Milestone Video</h2>
+<div style="position:relative;height:0;padding-bottom:60%">
+  <iframe src="https://www.youtube.com/embed/CWt3A4y2DCo?ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="500" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+</html>
