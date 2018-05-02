@@ -29,13 +29,13 @@
 
 <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2018</h1>
 <h1 align="middle">Final Project: GUN N’ PENGUIN</h1>
-<h2 align="middle">Stanley Liu, Harry Li, Eric Tsai</h2>
+<h2 align="middle">Harry Li, Stanley Liu, Eric Tsai</h2>
 
   <div align="middle">
     <table style="width=100%">
       <tr>
         <td>
-          <img src="./images/logo.png" align="middle" width="500px" style="width:500px;height:auto;"/>
+          <img src="./images/only_logo.png" align="middle" width="500px" style="width:500px;height:auto;"/>
         </td>
 
 
@@ -44,9 +44,12 @@
   </div>
 
 
-<h2 align="middle">Our Project</h2>
+<h2 align="middle">Abstract</h2>
 <p>
-We are making a zombie shooter game in unity with a focus on different concepts we’ve learned in 184. As according to our schedule, we’ve built most of the core game. We will spend the rest of our time working on polishing the rest of the gameplay and graphics elements.
+We make a zombie survival shooter game in Unity3d. We demonstrate the use of fractals
+in generating explosions for enemy death animations, build a 3D sound perspective system,
+and highlight a multitude of physical simulations. We discuss some of the difficulties we faced
+during our project development.
 </p>
 
   <div align="middle">
@@ -63,7 +66,12 @@ We are making a zombie shooter game in unity with a focus on different concepts 
 
 <h2 align =”middle”>Shooting and Gun Shots Simulation</h2>
 <p>
-We implemented shooting calculation using raycast. From CS184, we learned to cast a ray and test the intersection. We used raycast for the gun. When user presses left click, we shoot a ray toward the position of gun pointing(camera position) with range of 100. If it hits something, ray cast would return the object it hits. We used this technique as our base for the shooting method. Also, I added point light to all the particles in particle system to simulate gun’s muzzle. Whenever user shoots, it emits a point light on the muzzle to simulate muzzle flash with particle systems like bullets shells.
+We implemented shooting calculation using raycast. From CS184, we learned to cast a ray and test the intersection.
+We used raycast for the gun. When user presses left click, we shoot a ray toward the position of gun pointing(camera position) with range of 100.
+If it hits something, ray cast would return the object it hits.
+We used this technique as our base for the shooting method.
+Also, I added point light to all the particles in particle system to simulate gun’s muzzle.
+Whenever user shoots, it emits a point light on the muzzle to simulate muzzle flash with particle systems like bullets shells.
 </p>
 
   <div align="middle">
